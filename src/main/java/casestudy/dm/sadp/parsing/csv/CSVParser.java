@@ -19,12 +19,16 @@ import java.util.Map;
 
 @Component
 public class CSVParser implements FileStationsParser, InitializingBean {
+
   @Setter
   @Value("${db.data.stations.resource.filename}")
   private String stationsFile;
 
+  @Setter
   private char separator = ';';
 
+
+  @Setter
   @Value("#{new Boolean('${db.data.stations.resource.fileInResources}')}")
   private Boolean dataInResourcesFolder;
 
@@ -40,7 +44,7 @@ public class CSVParser implements FileStationsParser, InitializingBean {
   @Override
   public void afterPropertiesSet() throws Exception {
     if (stationsFile == null || stationsFile.isBlank()) {
-      throw new IOException("invalid file name in resources folder");
+      throw new IOException("Invalid file name in resources folder.");
     }
     CsvMapper mapper = new CsvMapper();
     CsvSchema csvSchema = mapper.typedSchemaFor(StationDTO.class).withHeader()
@@ -53,10 +57,19 @@ public class CSVParser implements FileStationsParser, InitializingBean {
           .with(csvSchema)
           .readValues(reader);
     }
+    this.mapStations(stations);
+
+  }
+
+  private void mapStations(MappingIterator<StationDTO> stations) throws IOException {
+    if (stations == null) {
+      return;
+    }
     while (stations.hasNextValue()) {
       StationDTO dto = stations.nextValue();
       String mapToKey = dto.getRL100Code().toLowerCase().replace(" ", "_");
       this.stationsMap.put(mapToKey, dto);
     }
   }
+
 }
