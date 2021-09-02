@@ -40,6 +40,11 @@ public class CSVParser implements FileStationsParser, InitializingBean {
     return this.stationsMap;
   }
 
+  /**
+   * starts after all properties are set
+   * uses jackson-fasterxml lib to parse the csv file
+   * @throws Exception
+   */
   @Override
   public void afterPropertiesSet() throws Exception {
     if (stationsFile == null || stationsFile.isBlank()) {
