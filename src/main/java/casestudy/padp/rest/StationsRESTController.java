@@ -20,13 +20,11 @@ public class StationsRESTController {
   @Autowired
   private StationsService stationsService;
 
-//
-//  public StationsRESTController(StationsService stationsService){}
 
   private static final Logger LOGGER = LoggerFactory.getLogger(StationsRESTController.class);
 
   /**
-   * @param request url with requested station-code
+   * @param request url with requested station-code writen in lower case and each whitespace is replaced by '_'
    * @return
    */
   @GetMapping("/**")
