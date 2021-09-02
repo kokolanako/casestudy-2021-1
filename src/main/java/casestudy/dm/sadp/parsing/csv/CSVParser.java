@@ -27,7 +27,6 @@ public class CSVParser implements FileStationsParser, InitializingBean {
   @Setter
   private char separator = ';';
 
-
   @Setter
   @Value("#{new Boolean('${db.data.stations.resource.fileInResources}')}")
   private Boolean dataInResourcesFolder;
@@ -61,6 +60,11 @@ public class CSVParser implements FileStationsParser, InitializingBean {
 
   }
 
+  /**
+   * fills the attribute stationMap with data
+   * @param stations
+   * @throws IOException
+   */
   private void mapStations(MappingIterator<StationDTO> stations) throws IOException {
     if (stations == null) {
       return;

@@ -37,7 +37,7 @@ public class StationsRESTController {
     StationDTO stationDto = this.stationsService.getStationByCode(stationAbbreviation);
     LOGGER.info("Request for station: {}", stationAbbreviation);
     if (stationDto == null) {
-      return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No data found for " + stationAbbreviation);
+      return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No data found for the station: " + stationAbbreviation);
     }
     return ResponseEntity.status(HttpStatus.OK).body(stationDto);
   }
