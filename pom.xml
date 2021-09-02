@@ -19,20 +19,11 @@
         <mvn-surefire.version>2.22.1</mvn-surefire.version>
         <spring-boot.version>2.4.1</spring-boot.version>
         <lombok.version>1.18.10</lombok.version>
-
-
-        <!--        <junit-jupiter.version>5.5.2</junit-jupiter.version>-->
-
-<!--        <commons-io.version>2.6</commons-io.version>-->
         <junit.jupiter.version>5.5.2</junit.jupiter.version>
         <junit.platform.version>1.5.2</junit.platform.version>
-
-
     </properties>
 
 
-    <!--    <dependencyManagement>-->
-    <!-- if in dependency managenement no need for version, it will be inherited from parent-->
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -50,18 +41,6 @@
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-csv</artifactId>
             <version>2.10.1</version>
-        </dependency>
-
-<!--        <dependency>-->
-<!--            <groupId>com.fasterxml.jackson.dataformat</groupId>-->
-<!--            <artifactId>jackson-dataformat-cbor</artifactId>-->
-<!--            <version>2.9.6</version>-->
-<!--        </dependency>-->
-
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-all</artifactId>
-            <version>1.9.5</version>
         </dependency>
 
 
@@ -82,11 +61,6 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.opencsv</groupId>
-            <artifactId>opencsv</artifactId>
-            <version>5.3</version>
         </dependency>
 
     </dependencies>
