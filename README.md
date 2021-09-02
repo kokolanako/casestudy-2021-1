@@ -8,9 +8,11 @@ Der Rest des Pfades soll den RL100-Code der Betriebsstelle kleingeschrieben eunt
 So wird z.B. "BJF S" Betriebsstelle mit der URL "/betriebsstelle/bjf_s" angesprochen.
 Die REST-Funktion gibt für eine unbekannte Betriebsstelle 404 Statuscode zurück und eine zusätzliche Ausgabe, dass keine Betriebsstelle mit dem entsprechenden Namen gefunden wurde."
 
-#Set fields in application.properties:
+# Set fields in application.properties:
+
 -db.data.stations.resource.filename= DBNetz-Betriebsstellenverzeichnis-Stand2021-07.csv
 -db.data.stations.resource.fileInResources = true
 
-#JUnit Test
+# JUnit Test
+
 -für die Klasse CSVParser
