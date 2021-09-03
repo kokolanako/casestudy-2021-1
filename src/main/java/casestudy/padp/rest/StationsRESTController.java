@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 @RequestMapping("/betriebsstelle")
 public class StationsRESTController {
+
   @Autowired
   private StationsService stationsService;
 

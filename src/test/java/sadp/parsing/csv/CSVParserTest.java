@@ -37,6 +37,7 @@ public class CSVParserTest {
   public void testStationsSize() {
     Assertions.assertEquals(23473, this.parser.getStations().size());
   }
+
   @Test
   public void testUnknownStation() {
     StationDTO dto = this.parser.getStations().get("ddd");
